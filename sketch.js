@@ -1,5 +1,6 @@
 var bird;
 var pipes = [];
+var score = 0;
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   bird = new Bird();
@@ -18,16 +19,33 @@ function draw() {
     pipes[i].update();
 
     if (pipes[i].hits(bird)) {
-      console.log("HITS");
+      fill(255, 191, 0);
+      textSize(98);
+      textStyle(BOLDITALIC);
+      text("Game Over", window.innerWidth / 4, window.innerHeight / 3.8);
+
+      fill(255, 180, 0);
+      textSize(72);
+      textStyle(BOLD);
+      text("Score", window.innerWidth / 2.5, window.innerHeight / 2.2);
+
+      textStyle(NORMAL);
+      text(score.toString(), window.innerWidth / 2.1, window.innerHeight / 2);
+      noLoop();
     }
 
-    if (pipes[i].offscreen()) { 
+    if (pipes[i].offscreen()) {
       pipes.splice(i, 1);
+      score += 1;
     }
   }
   bird.update();
   bird.show();
 }
+
+// function preload() {
+//   fontAtari = loadFont("./assets/fonts/AtariClassicChunky.ttf");
+// }
 
 function mousePressed() {
   bird.up();

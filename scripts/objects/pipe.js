@@ -9,8 +9,8 @@ function Pipe() {
   this.speed = 5;
 
   this.hits = bird => {
-    if (bird.y < this.top || bird.y > height - this.bottom) {
-      if (bird.x > this.x && bird.x < this.x + this.w) {
+    if (bird.y + 30 < this.top || bird.y + 30 > height - this.bottom) {
+      if (bird.x + 30 > this.x && bird.x + 30 < this.x + this.w) {
         return true;
       }
     }
