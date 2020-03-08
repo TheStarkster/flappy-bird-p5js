@@ -3,7 +3,7 @@ function Bird() {
   this.x = 85;
   this.gravity = 1.3;
   this.velocity = 0;
-  this.thrust = -16;
+  this.thrust = -21;
 
   this.show = () => {
     fill(255);
