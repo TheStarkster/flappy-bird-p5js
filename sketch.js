@@ -24,11 +24,9 @@ function draw() {
   }
 }
 
-function mousePressed(){
+function mousePressed() {
   bird.up();
-}
-function keyPressed() {
-  if (key == " ") {
-    bird.up();
-  }
+  // if (key == " ") {
+  //   bird.up();
+  // }
 }
