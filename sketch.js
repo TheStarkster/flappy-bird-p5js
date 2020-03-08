@@ -24,6 +24,9 @@ function draw() {
   }
 }
 
+function touchStarted(){
+  bird.up();
+}
 function keyPressed() {
   if (key == " ") {
     bird.up();
