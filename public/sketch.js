@@ -32,6 +32,24 @@ function draw() {
       textStyle(NORMAL);
       text(score.toString(), window.innerWidth / 2.1, window.innerHeight / 2);
       noLoop();
+
+      // sending score to server...
+      var xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        if (xhttp.readyState === xhttp.DONE) {
+          if (xhttp.status === 200) {
+            window.location.replace("http://localhost:2572/response");
+          }
+        }
+      };
+      xhttp.open("POST", "http://localhost:2572/score", true);
+      // xhttp.setRequestHeader(
+      //   "Content-Type",
+      //   "application/x-www-form-urlencoded"
+      // );
+      // xhttp.send("foo=bar&lorem=ipsum");
+      xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      xhttp.send(JSON.stringify({ score: score }));
     }
 
     if (pipes[i].offscreen()) {
