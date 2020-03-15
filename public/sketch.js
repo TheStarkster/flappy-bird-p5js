@@ -44,7 +44,7 @@ function draw() {
           }
         }
       };
-      xhttp.open("POST", "http://games.ibigplay.com/score", true);
+      xhttp.open("POST", "http://games.ibigplay.com/flappy/score", true);
       // xhttp.setRequestHeader(
       //   "Content-Type",
       //   "application/x-www-form-urlencoded"

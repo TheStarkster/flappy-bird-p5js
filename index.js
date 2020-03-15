@@ -27,7 +27,7 @@ app.get("/response", (req, res) => {
     score: score
   });
 });
-app.post("/score", (req, res) => {
+app.post("/flappy/score", (req, res) => {
   score = req.body.score;
   res.sendStatus(200);
 });
