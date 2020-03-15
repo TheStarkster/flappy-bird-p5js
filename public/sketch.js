@@ -38,11 +38,13 @@ function draw() {
       xhttp.onload = function() {
         if (xhttp.readyState === xhttp.DONE) {
           if (xhttp.status === 200) {
-            window.location.replace("http://localhost:2572/response");
+            window.location.replace(
+              "http://games.ibigplay.com/flappy/response"
+            );
           }
         }
       };
-      xhttp.open("POST", "http://localhost:2572/score", true);
+      xhttp.open("POST", "http://games.ibigplay.com/flappy/score", true);
       // xhttp.setRequestHeader(
       //   "Content-Type",
       //   "application/x-www-form-urlencoded"
