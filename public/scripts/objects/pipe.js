@@ -6,7 +6,7 @@ function Pipe() {
   this.bottom = height - (centery + spacing / 2);
   this.x = width;
   this.w = 50;
-  this.speed = 5;
+  this.speed = 8;
 
   this.hits = bird => {
     if (bird.y + 30 < this.top || bird.y + 30 > height - this.bottom) {
