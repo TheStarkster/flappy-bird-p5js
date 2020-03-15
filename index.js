@@ -22,11 +22,13 @@ app.use(bodyParser.json());
 //     res.end();
 //   });
 // });
+
 app.get("/response", (req, res) => {
   return res.render("results", {
     score: score
   });
 });
+
 app.post("/score", (req, res) => {
   score = req.body.score;
   res.sendStatus(200);
