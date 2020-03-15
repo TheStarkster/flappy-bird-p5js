@@ -15,13 +15,13 @@ app.use("/public", express.static(path.join(__dirname, "public")));
 
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-  fs.readFile("index.html", function(err, data) {
-    res.writeHead(200, { "Content-Type": "text/html" });
-    res.write(data);
-    res.end();
-  });
-});
+// app.get("/", (req, res) => {
+//   fs.readFile("index.html", function(err, data) {
+//     res.writeHead(200, { "Content-Type": "text/html" });
+//     res.write(data);
+//     res.end();
+//   });
+// });
 app.get("/response", (req, res) => {
   return res.render("results", {
     score: score
