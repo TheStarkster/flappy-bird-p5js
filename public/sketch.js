@@ -5,7 +5,7 @@ function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   bird = new Bird();
   pipes.push(new Pipe());
-  var canvas = document.body.firstChild;
+  var canvas = document.getElementById("defaultCanvas0");
   console.log(canvas);
   var displayWidth = canvas.clientWidth * window.devicePixelRatio;
   var displayHeight = canvas.clientHeight * window.devicePixelRatio;
