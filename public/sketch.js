@@ -5,6 +5,14 @@ function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   bird = new Bird();
   pipes.push(new Pipe());
+  var canvas = document.body.firstChild;
+  console.log(canvas);
+  var displayWidth = canvas.clientWidth * window.devicePixelRatio;
+  var displayHeight = canvas.clientHeight * window.devicePixelRatio;
+  if (canvas.width !== displayWidth || canvas.height !== displayHeight) {
+    canvas.width = displayWidth;
+    canvas.height = displayHeight;
+  }
 }
 
 function draw() {
