@@ -2,19 +2,16 @@ var bird;
 var pipes = [];
 var score = 0;
 function setup() {
-  createCanvas(
-    window.outerWidth * devicePixelRatio,
-    window.outerHeight * devicePixelRatio
-  );
+  createCanvas(window.outerWidth, window.outerHeight);
   bird = new Bird();
   pipes.push(new Pipe());
-  // var canvas = document.getElementById("defaultCanvas0");
-  // context = canvas.getContext("2d");
-  // canvas.width = window.outerWidth * devicePixelRatio;
-  // canvas.height = window.outerHeight * devicePixelRatio;
 }
 
 function draw() {
+  var canvas = document.getElementById("defaultCanvas0");
+  context = canvas.getContext("2d");
+  canvas.width = window.outerWidth * devicePixelRatio;
+  canvas.height = window.outerHeight * devicePixelRatio;
   background(0);
   if (frameCount % 100 == 0) {
     pipes.push(new Pipe());
