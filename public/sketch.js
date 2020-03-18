@@ -2,7 +2,7 @@ var bird;
 var pipes = [];
 var score = 0;
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(320, 657);
   bird = new Bird();
   pipes.push(new Pipe());
   var canvas = document.getElementById("defaultCanvas0");
