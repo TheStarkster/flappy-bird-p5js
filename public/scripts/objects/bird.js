@@ -1,4 +1,5 @@
 function Bird() {
+  console.log(height);
   this.y = height / 2;
   this.x = 85;
   this.gravity = 1.3;
