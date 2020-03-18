@@ -7,8 +7,8 @@ function setup() {
   pipes.push(new Pipe());
   var canvas = document.getElementById("defaultCanvas0");
   console.log(canvas);
-  var displayWidth = canvas.clientWidth;
-  var displayHeight = canvas.clientHeight;
+  var displayWidth = canvas.clientWidth * window.devicePixelRatio;
+  var displayHeight = canvas.clientHeight * window.devicePixelRatio;
   if (canvas.width !== displayWidth || canvas.height !== displayHeight) {
     canvas.width = displayWidth;
     canvas.height = displayHeight;
