@@ -17,8 +17,8 @@ function setup() {
   // }
   var canvas = document.getElementById("defaultCanvas0");
   context = canvas.getContext("2d");
-  canvas.width = window.outerWidth * 5;
-  canvas.height = window.outerHeight * 5;
+  canvas.width = window.outerWidth * 3;
+  canvas.height = window.outerHeight * 3;
 }
 
 function draw() {
