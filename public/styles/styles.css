@@ -4,10 +4,10 @@ body {
   padding: 0;
 }
 canvas {
-  position: absolute !important;
+  /* position: absolute !important;
   width: 100% !important;
   height: 100% !important;
   image-rendering: optimizeSpeed;
-  display: block;
+  display: block; */
   touch-action: manipulation;
 }
