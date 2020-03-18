@@ -4,9 +4,9 @@ body {
   padding: 0;
 }
 canvas {
-  position: absolute !important;
+  /* position: absolute !important;
   width: 320px !important;
-  height: 657px !important;
+  height: 657px !important; */
   image-rendering: optimizeSpeed;
   display: block;
   touch-action: manipulation;
