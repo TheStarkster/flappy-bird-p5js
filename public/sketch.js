@@ -17,8 +17,8 @@ function setup() {
   // }
   var canvas = document.getElementById("defaultCanvas0");
   context = canvas.getContext("2d");
-  canvas.width = window.outerWidth * devicePixelRatio;
-  canvas.height = window.outerHeight * devicePixelRatio;
+  canvas.width = window.outerWidth / devicePixelRatio;
+  canvas.height = window.outerHeight / devicePixelRatio;
 }
 
 function draw() {
