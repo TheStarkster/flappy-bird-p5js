@@ -14,7 +14,7 @@ function setup() {
 
 function draw() {
   background(0);
-  if (frameCount % 80 == 0) {
+  if (frameCount % 74 == 0) {
     pipes.push(new Pipe());
   }
   for (let i = pipes.length - 1; i >= 0; i--) {
