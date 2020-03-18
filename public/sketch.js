@@ -2,8 +2,8 @@ var bird;
 var pipes = [];
 var score = 0;
 function setup() {
-  console.log(width);
-  console.log(height);
+  console.log(window.innerWidth);
+  console.log(window.innerHeight);
   createCanvas(window.innerWidth, window.innerHeight);
   bird = new Bird();
   pipes.push(new Pipe());
