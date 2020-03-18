@@ -8,10 +8,12 @@ function setup() {
 }
 
 function draw() {
-  var canvas = document.getElementById("defaultCanvas0");
-  context = canvas.getContext("2d");
-  canvas.width = window.outerWidth * devicePixelRatio;
-  canvas.height = window.outerHeight * devicePixelRatio;
+  window.onload = () => {
+    var canvas = document.getElementById("defaultCanvas0");
+    context = canvas.getContext("2d");
+    canvas.width = window.outerWidth * devicePixelRatio;
+    canvas.height = window.outerHeight * devicePixelRatio;
+  };
   background(0);
   if (frameCount % 100 == 0) {
     pipes.push(new Pipe());
