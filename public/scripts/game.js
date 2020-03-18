@@ -51,8 +51,8 @@ class playGame extends Phaser.Scene {
     super("PlayGame");
   }
   preload() {
-    this.load.image("bird", "../assets/images/bird.png");
-    this.load.image("pipe", "../assets/images/pipe.png");
+    this.load.image("bird", "../flappy/assets/images/bird.png");
+    this.load.image("pipe", "../flappy/assets/images/pipe.png");
   }
   create() {
     this.pipeGroup = this.physics.add.group();
