@@ -143,6 +143,7 @@ class playGame extends Phaser.Scene {
       Math.max(this.score, this.topScore)
     );
     // this.scene.start("PlayGame");
+    this.scene.stop();
     var xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
       if (xhttp.readyState === xhttp.DONE) {
