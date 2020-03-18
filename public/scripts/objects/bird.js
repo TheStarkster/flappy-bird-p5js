@@ -8,7 +8,7 @@ function Bird() {
 
   this.show = () => {
     fill(255);
-    ellipse(this.x, this.y, 64, 64);
+    ellipse(this.x, this.y, 46, 46);
   };
 
   this.update = () => {
