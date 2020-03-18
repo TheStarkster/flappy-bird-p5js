@@ -17,7 +17,9 @@ function setup() {
 
 function draw() {
   background(0);
-
+  fill(255);
+  text(window.outerWidth);
+  text(window.outerHeight);
   if (frameCount % 100 == 0) {
     pipes.push(new Pipe());
   }
