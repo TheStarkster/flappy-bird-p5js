@@ -24,9 +24,9 @@ app.use(bodyParser.json());
 // });
 
 app.get("/response", (req, res) => {
-  // return res.render("results", {
-  //   score: score
-  // });
+  return res.render("results", {
+    score: score
+  });
 });
 
 app.post("/score", (req, res) => {
