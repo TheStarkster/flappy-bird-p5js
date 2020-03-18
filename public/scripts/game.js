@@ -142,6 +142,17 @@ class playGame extends Phaser.Scene {
       gameOptions.localStorageName,
       Math.max(this.score, this.topScore)
     );
-    this.scene.start("PlayGame");
+    // this.scene.start("PlayGame");
+    var xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+      if (xhttp.readyState === xhttp.DONE) {
+        if (xhttp.status === 200) {
+          window.location.replace("http://games.ibigplay.com/flappy/response");
+        }
+      }
+    };
+    xhttp.open("POST", "http://games.ibigplay.com/flappy/score", true);
+    xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhttp.send(JSON.stringify({ score: score }));
   }
 }
