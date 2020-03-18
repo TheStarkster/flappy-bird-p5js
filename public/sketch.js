@@ -4,7 +4,7 @@ var score = 0;
 function setup() {
   console.log(window.outerWidth);
   console.log(window.outerHeight);
-  createCanvas(window.outerWidth, window.outerHeight);
+  createCanvas(640, 1250);
   bird = new Bird();
   pipes.push(new Pipe());
   // var canvas = document.getElementById("defaultCanvas0");
@@ -43,24 +43,24 @@ function draw() {
       noLoop();
 
       // sending score to server...
-      var xhttp = new XMLHttpRequest();
-      xhttp.onload = function() {
-        if (xhttp.readyState === xhttp.DONE) {
-          if (xhttp.status === 200) {
-            window.location.replace(
-              "http://games.ibigplay.com/flappy/response"
-            );
-          }
-        }
-      };
-      xhttp.open("POST", "http://games.ibigplay.com/flappy/score", true);
-      // xhttp.setRequestHeader(
-      //   "Content-Type",
-      //   "application/x-www-form-urlencoded"
-      // );
-      // xhttp.send("foo=bar&lorem=ipsum");
-      xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-      xhttp.send(JSON.stringify({ score: score }));
+      // var xhttp = new XMLHttpRequest();
+      // xhttp.onload = function() {
+      //   if (xhttp.readyState === xhttp.DONE) {
+      //     if (xhttp.status === 200) {
+      //       window.location.replace(
+      //         "http://games.ibigplay.com/flappy/response"
+      //       );
+      //     }
+      //   }
+      // };
+      // xhttp.open("POST", "http://games.ibigplay.com/flappy/score", true);
+      // // xhttp.setRequestHeader(
+      // //   "Content-Type",
+      // //   "application/x-www-form-urlencoded"
+      // // );
+      // // xhttp.send("foo=bar&lorem=ipsum");
+      // xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      // xhttp.send(JSON.stringify({ score: score }));
     }
 
     if (pipes[i].offscreen()) {
