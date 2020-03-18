@@ -20,41 +20,29 @@ function draw() {
   for (let i = pipes.length - 1; i >= 0; i--) {
     pipes[i].show();
     pipes[i].update();
-
     if (pipes[i].hits(bird)) {
       fill(255, 191, 0);
-      // textSize(98);
-      // textStyle(BOLDITALIC);
-      // text("Game Over", window.innerWidth / 4, window.innerHeight / 3.8);
-
-      // fill(255, 180, 0);
-      // textSize(72);
-      // textStyle(BOLD);
-      // text("Score", window.innerWidth / 2.5, window.innerHeight / 2.2);
-
-      // textStyle(NORMAL);
-      // text(score.toString(), window.innerWidth / 2.1, window.innerHeight / 2);
-      // noLoop();
-
-      // sending score to server...
-      // var xhttp = new XMLHttpRequest();
-      // xhttp.onload = function() {
-      //   if (xhttp.readyState === xhttp.DONE) {
-      //     if (xhttp.status === 200) {
-      //       window.location.replace(
-      //         "http://games.ibigplay.com/flappy/response"
-      //       );
-      //     }
-      //   }
-      // };
-      // xhttp.open("POST", "http://games.ibigplay.com/flappy/score", true);
-      // // xhttp.setRequestHeader(
-      // //   "Content-Type",
-      // //   "application/x-www-form-urlencoded"
-      // // );
-      // // xhttp.send("foo=bar&lorem=ipsum");
-      // xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-      // xhttp.send(JSON.stringify({ score: score }));
+      textSize(98);
+      textStyle(BOLDITALIC);
+      noLoop();
+      var xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        if (xhttp.readyState === xhttp.DONE) {
+          if (xhttp.status === 200) {
+            window.location.replace(
+              "http://games.ibigplay.com/flappy/response"
+            );
+          }
+        }
+      };
+      xhttp.open("POST", "http://games.ibigplay.com/flappy/score", true);
+      // xhttp.setRequestHeader(
+      //   "Content-Type",
+      //   "application/x-www-form-urlencoded"
+      // );
+      // xhttp.send("foo=bar&lorem=ipsum");
+      xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+      xhttp.send(JSON.stringify({ score: score }));
     }
 
     if (pipes[i].offscreen()) {
