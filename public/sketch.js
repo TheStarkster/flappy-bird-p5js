@@ -2,7 +2,7 @@ var bird;
 var pipes = [];
 var score = 0;
 function setup() {
-  createCanvas(window.outerWidth, window.outerHeight);
+  createCanvas(window.outerWidth, window.outerHeight, WEBGL);
   bird = new Bird();
   pipes.push(new Pipe());
   var canvas = document.getElementById("defaultCanvas0");
@@ -52,10 +52,6 @@ function draw() {
   bird.update();
   bird.show();
 }
-
-// function preload() {
-//   fontAtari = loadFont("./assets/fonts/AtariClassicChunky.ttf");
-// }
 
 function mousePressed() {
   bird.up();
