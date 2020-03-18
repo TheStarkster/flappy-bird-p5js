@@ -4,7 +4,7 @@ var score = 0;
 function setup() {
   // console.log(window.outerWidth);
   // console.log(window.outerHeight);
-  createCanvas(640, 1250);
+  createCanvas();
   bird = new Bird();
   pipes.push(new Pipe());
   // var canvas = document.getElementById("defaultCanvas0");
