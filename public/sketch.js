@@ -5,20 +5,18 @@ function setup() {
   createCanvas(window.outerWidth, window.outerHeight);
   bird = new Bird();
   pipes.push(new Pipe());
+
+  var canvas = document.getElementById("defaultCanvas0");
+  context = canvas.getContext("2d");
+  canvas.width = window.outerWidth * devicePixelRatio;
+  canvas.height = window.outerHeight * devicePixelRatio;
 }
 
 function draw() {
-  window.onload = () => {
-    var canvas = document.getElementById("defaultCanvas0");
-    context = canvas.getContext("2d");
-    canvas.width = window.outerWidth * devicePixelRatio;
-    canvas.height = window.outerHeight * devicePixelRatio;
-  };
   background(0);
   if (frameCount % 100 == 0) {
     pipes.push(new Pipe());
   }
-
   for (let i = pipes.length - 1; i >= 0; i--) {
     pipes[i].show();
     pipes[i].update();
