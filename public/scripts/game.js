@@ -7,7 +7,7 @@ var gameOptions = {
   birdSpeed: 125,
 
   // flap thrust
-  birdFlapPower: 320,
+  birdFlapPower: 328,
 
   // minimum pipe height, in pixels. Affects hole position
   minPipeHeight: 50,
@@ -16,7 +16,7 @@ var gameOptions = {
   pipeDistance: [220, 280],
 
   // hole range between pipes, in pixels
-  pipeHole: [120, 180],
+  pipeHole: [100, 180],
 
   // local storage object name
   localStorageName: "bestFlappyScore"
