@@ -16,7 +16,7 @@ var gameOptions = {
   pipeDistance: [220, 280],
 
   // hole range between pipes, in pixels
-  pipeHole: [100, 165],
+  pipeHole: [120, 180],
 
   // local storage object name
   localStorageName: "bestFlappyScore"
