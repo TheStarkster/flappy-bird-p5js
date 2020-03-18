@@ -1,7 +1,7 @@
 var game;
 var gameOptions = {
   // bird gravity, will make bird fall if you don't flap
-  birdGravity: 800,
+  birdGravity: 1000,
 
   // horizontal bird speed
   birdSpeed: 125,
