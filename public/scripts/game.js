@@ -7,7 +7,7 @@ var gameOptions = {
   birdSpeed: 125,
 
   // flap thrust
-  birdFlapPower: 300,
+  birdFlapPower: 320,
 
   // minimum pipe height, in pixels. Affects hole position
   minPipeHeight: 50,
@@ -51,7 +51,7 @@ class playGame extends Phaser.Scene {
     super("PlayGame");
   }
   preload() {
-    this.load.image("bird", "../flappy/assets/images/bird.png");
+    this.load.image("bird", "../flappy/assets/images/ball.png");
     this.load.image("pipe", "../flappy/assets/images/pipe.png");
   }
   create() {
