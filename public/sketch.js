@@ -18,6 +18,10 @@ function setup() {
 }
 
 function draw() {
+  var canvas = document.getElementById("defaultCanvas0");
+  context = canvas.getContext("2d");
+  canvas.width = window.outerWidth;
+  canvas.height = window.outerHeight;
   background(0);
   if (frameCount % 100 == 0) {
     pipes.push(new Pipe());
