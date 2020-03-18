@@ -5,7 +5,6 @@ function setup() {
   createCanvas(window.outerWidth, window.outerHeight);
   bird = new Bird();
   pipes.push(new Pipe());
-
   var canvas = document.getElementById("defaultCanvas0");
   context = canvas.getContext("2d");
   canvas.width = window.outerWidth * devicePixelRatio;
