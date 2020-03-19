@@ -16,8 +16,6 @@ app.use(express.static("public"));
 app.use(bodyParser.json());
 
 app.get("/:id/:name", (req, res) => {
-  console.log(req.params.id);
-  console.log(req.params.name);
   fs.readFile("index.html", function(err, data) {
     res.writeHead(200, { "Content-Type": "text/html" });
     res.write(data);
