@@ -160,6 +160,11 @@ class playGame extends Phaser.Scene {
     };
     xhttp.open("POST", "http://games.ibigplay.com/flappy/score", true);
     xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    xhttp.send(JSON.stringify({ score: this.score }));
+    xhttp.send(
+      JSON.stringify({
+        score: this.score,
+        Bscore: Math.max(this.score, this.topScore)
+      })
+    );
   }
 }
