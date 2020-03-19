@@ -27,7 +27,7 @@ canvas {
 .resultCard {
   position: relative;
   border-radius: 12px;
-  padding: 38px;
+  padding: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,10 +36,16 @@ canvas {
 }
 h1 {
   font-family: atari;
-  font-size: 28px;
+  font-size: 24px;
   color: #27ae60;
 }
 h2 {
   font-family: atari;
   font-size: 18px;
+}
+.gameName {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
 }
