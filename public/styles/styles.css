@@ -1,5 +1,5 @@
 @font-face {
-  font-family: myFirstFont;
+  font-family: atari;
   src: url("../flappy/assets/fonts/AtariClassicChunky.ttf");
 }
 html,
@@ -33,4 +33,7 @@ canvas {
   align-items: center;
   flex-direction: row;
   background-color: white;
+}
+h1 {
+  font-family: atari;
 }
