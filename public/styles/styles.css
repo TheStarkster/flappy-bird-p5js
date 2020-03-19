@@ -1,3 +1,7 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url("../flappy/assets/fonts/AtariClassicChunky.ttf");
+}
 html,
 body {
   margin: 0;
