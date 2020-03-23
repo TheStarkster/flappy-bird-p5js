@@ -56,12 +56,15 @@ app.post("/score", (req, res) => {
     hostname: "localhost",
     port: 5000,
     path: "/tournament/user/score-update",
-    method: "POST"
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Content-Length": data.length
+    }
   };
 
   const REQ = http.request(options, RES => {
     console.log(`res: ${RES}`);
-
     RES.on("data", d => {
       process.stdout.write(d);
     });
