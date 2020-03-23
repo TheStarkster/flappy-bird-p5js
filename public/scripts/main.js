@@ -12,7 +12,7 @@ game.States.boot = function() {
       this.scale.forcePortrait = true;
       this.scale.refresh();
     }
-    game.load.image("loading", "assets/preloader.gif");
+    game.load.image("loading", "http://games.ibigplay.com/flappy/assets/preloader.gif");
   };
   this.create = function() {
     game.state.start("preload");
