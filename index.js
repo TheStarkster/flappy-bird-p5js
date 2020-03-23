@@ -32,20 +32,21 @@ app.get("/response", (req, res) => {
     Bscore: Bscore,
     name: name
   });
-  const data = {
-    score: score,
-    id: id,
-    tid: tid
-  };
-  axios.default
-    .post("http://162.241.71.139:5000/tournament/user/score-update", data)
-    .then(u => console.log(u));
-  console.log("runned");
+  
+  
 });
 
 app.post("/score", (req, res) => {
   score = req.body.score;
   Bscore = req.body.Bscore;
   res.sendStatus(200);
+  const data = {
+    score: score,
+    id: id,
+    tid: tid
+  };
+  axios.default
+  .post("http://localhost:5000/tournament/user/score-update", data)
+  .then(u => console.log(u));
 });
 app.listen(2572);
