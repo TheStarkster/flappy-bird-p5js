@@ -46,11 +46,12 @@ app.post("/score", (req, res) => {
   // axios.default
   // .post("http://localhost:5000/tournament/user/score-update", data)
   // .then(u => console.log(u));
-  const data = {
+  const data = JSON.stringify({
     score: score,
     id: id,
     tid: tid
-  };
+  });
+
   const options = {
     hostname: "localhost",
     port: 5000,
