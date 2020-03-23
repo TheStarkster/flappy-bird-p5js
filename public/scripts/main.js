@@ -25,67 +25,67 @@ game.States.preload = function() {
     game.load.setPreloadSprite(preloadSprite);
     game.load.image(
       "background",
-      "http:games.ibigplay.com/flappy/assets/background.png"
+      "http://games.ibigplay.com/flappy/assets/background.png"
     );
     game.load.image(
       "ground",
-      "http:games.ibigplay.com/flappy/assets/ground.png"
+      "http://games.ibigplay.com/flappy/assets/ground.png"
     );
-    game.load.image("title", "http:games.ibigplay.com/flappy/assets/title.png");
+    game.load.image("title", "http://games.ibigplay.com/flappy/assets/title.png");
     game.load.spritesheet(
       "bird",
-      "http:games.ibigplay.com/flappy/assets/bird.png",
+      "http://games.ibigplay.com/flappy/assets/bird.png",
       34,
       24,
       3
     );
     game.load.image(
       "btn",
-      "http:games.ibigplay.com/flappy/assets/start-button.png"
+      "http://games.ibigplay.com/flappy/assets/start-button.png"
     );
     game.load.spritesheet(
       "pipe",
-      "http:games.ibigplay.com/flappy/assets/pipes.png",
+      "http://games.ibigplay.com/flappy/assets/pipes.png",
       54,
       320,
       2
     );
     game.load.bitmapFont(
       "flappy_font",
-      "http:games.ibigplay.com/flappy/assets/fonts/flappyfont/flappyfont.png",
-      "http:games.ibigplay.com/flappy/assets/fonts/flappyfont/flappyfont.fnt"
+      "http://games.ibigplay.com/flappy/assets/fonts/flappyfont/flappyfont.png",
+      "http://games.ibigplay.com/flappy/assets/fonts/flappyfont/flappyfont.fnt"
     );
     game.load.audio(
       "fly_sound",
-      "http:games.ibigplay.com/flappy/assets/flap.wav"
+      "http://games.ibigplay.com/flappy/assets/flap.wav"
     );
     game.load.audio(
       "score_sound",
-      "http:games.ibigplay.com/flappy/assets/score.wav"
+      "http://games.ibigplay.com/flappy/assets/score.wav"
     );
     game.load.audio(
       "hit_pipe_sound",
-      "http:games.ibigplay.com/flappy/assets/pipe-hit.wav"
+      "http://games.ibigplay.com/flappy/assets/pipe-hit.wav"
     );
     game.load.audio(
       "hit_ground_sound",
-      "http:games.ibigplay.com/flappy/assets/ouch.wav"
+      "http://games.ibigplay.com/flappy/assets/ouch.wav"
     );
     game.load.image(
       "ready_text",
-      "http:games.ibigplay.com/flappy/assets/get-ready.png"
+      "http://games.ibigplay.com/flappy/assets/get-ready.png"
     );
     game.load.image(
       "play_tip",
-      "http:games.ibigplay.com/flappy/assets/instructions.png"
+      "http://games.ibigplay.com/flappy/assets/instructions.png"
     );
     game.load.image(
       "game_over",
-      "http:games.ibigplay.com/flappy/assets/gameover.png"
+      "http://games.ibigplay.com/flappy/assets/gameover.png"
     );
     game.load.image(
       "score_board",
-      "http:games.ibigplay.com/flappy/assets/scoreboard.png"
+      "http://games.ibigplay.com/flappy/assets/scoreboard.png"
     );
   };
   this.create = function() {
