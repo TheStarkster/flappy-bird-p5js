@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const fs = require("fs");
 const engine = require("ejs-locals");
 const expressLayouts = require("express-ejs-layouts");
-const https = require("https");
+const http = require("http");
 const app = express();
 
 var score, Bscore, id, name, tid;
@@ -59,7 +59,7 @@ app.post("/score", (req, res) => {
     method: "POST"
   };
 
-  const REQ = https.request(options, RES => {
+  const REQ = http.request(options, RES => {
     console.log(`statusCode: ${RES.statusCode}`);
 
     RES.on("data", d => {
