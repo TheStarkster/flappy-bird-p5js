@@ -40,6 +40,7 @@ app.get("/response", (req, res) => {
   axios.default
     .post("http://localhost:5000/tournament/user/score-update", data)
     .then(u => console.log(u));
+  console.log("runned");
 });
 
 app.post("/score", (req, res) => {
