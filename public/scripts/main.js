@@ -23,25 +23,70 @@ game.States.preload = function() {
   this.preload = function() {
     var preloadSprite = game.add.sprite(34, game.height / 2, "loading");
     game.load.setPreloadSprite(preloadSprite);
-    game.load.image("background", "assets/background.png");
-    game.load.image("ground", "assets/ground.png");
-    game.load.image("title", "assets/title.png");
-    game.load.spritesheet("bird", "assets/bird.png", 34, 24, 3);
-    game.load.image("btn", "assets/start-button.png");
-    game.load.spritesheet("pipe", "assets/pipes.png", 54, 320, 2);
+    game.load.image(
+      "background",
+      "http:games.ibigplay.com/flappy/assets/background.png"
+    );
+    game.load.image(
+      "ground",
+      "http:games.ibigplay.com/flappy/assets/ground.png"
+    );
+    game.load.image("title", "http:games.ibigplay.com/flappy/assets/title.png");
+    game.load.spritesheet(
+      "bird",
+      "http:games.ibigplay.com/flappy/assets/bird.png",
+      34,
+      24,
+      3
+    );
+    game.load.image(
+      "btn",
+      "http:games.ibigplay.com/flappy/assets/start-button.png"
+    );
+    game.load.spritesheet(
+      "pipe",
+      "http:games.ibigplay.com/flappy/assets/pipes.png",
+      54,
+      320,
+      2
+    );
     game.load.bitmapFont(
       "flappy_font",
-      "assets/fonts/flappyfont/flappyfont.png",
-      "assets/fonts/flappyfont/flappyfont.fnt"
+      "http:games.ibigplay.com/flappy/assets/fonts/flappyfont/flappyfont.png",
+      "http:games.ibigplay.com/flappy/assets/fonts/flappyfont/flappyfont.fnt"
     );
-    game.load.audio("fly_sound", "assets/flap.wav");
-    game.load.audio("score_sound", "assets/score.wav");
-    game.load.audio("hit_pipe_sound", "assets/pipe-hit.wav");
-    game.load.audio("hit_ground_sound", "assets/ouch.wav");
-    game.load.image("ready_text", "assets/get-ready.png");
-    game.load.image("play_tip", "assets/instructions.png");
-    game.load.image("game_over", "assets/gameover.png");
-    game.load.image("score_board", "assets/scoreboard.png");
+    game.load.audio(
+      "fly_sound",
+      "http:games.ibigplay.com/flappy/assets/flap.wav"
+    );
+    game.load.audio(
+      "score_sound",
+      "http:games.ibigplay.com/flappy/assets/score.wav"
+    );
+    game.load.audio(
+      "hit_pipe_sound",
+      "http:games.ibigplay.com/flappy/assets/pipe-hit.wav"
+    );
+    game.load.audio(
+      "hit_ground_sound",
+      "http:games.ibigplay.com/flappy/assets/ouch.wav"
+    );
+    game.load.image(
+      "ready_text",
+      "http:games.ibigplay.com/flappy/assets/get-ready.png"
+    );
+    game.load.image(
+      "play_tip",
+      "http:games.ibigplay.com/flappy/assets/instructions.png"
+    );
+    game.load.image(
+      "game_over",
+      "http:games.ibigplay.com/flappy/assets/gameover.png"
+    );
+    game.load.image(
+      "score_board",
+      "http:games.ibigplay.com/flappy/assets/scoreboard.png"
+    );
   };
   this.create = function() {
     game.state.start("menu");
@@ -216,6 +261,22 @@ game.States.play = function() {
     this.gameIsOver = true;
     this.stopGame();
     if (show_text) this.showGameOverText();
+    var xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+      if (xhttp.readyState === xhttp.DONE) {
+        if (xhttp.status === 200) {
+          window.location.replace("http://games.ibigplay.com/flappy/response");
+        }
+      }
+    };
+    xhttp.open("POST", "http://games.ibigplay.com/flappy/score", true);
+    xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhttp.send(
+      JSON.stringify({
+        score: this.score,
+        Bscore: Math.max(this.score, game.bestScore)
+      })
+    );
   };
   this.showGameOverText = function() {
     this.scoreText.destroy();
@@ -248,23 +309,12 @@ game.States.play = function() {
       20,
       this.gameOverGroup
     );
-    var replayBtn = game.add.button(
-      game.width / 2,
-      210,
-      "btn",
-      function() {
-        game.state.start("play");
-      },
-      this,
-      null,
-      null,
-      null,
-      null,
-      this.gameOverGroup
-    );
+    // var replayBtn = game.add.button(game.width/2, 210, 'btn', function() {
+    // 	game.state.start('play');
+    // }, this, null, null, null, null, this.gameOverGroup);
     gameOverText.anchor.setTo(0.5, 0);
     scoreboard.anchor.setTo(0.5, 0);
-    replayBtn.anchor.setTo(0.5, 0);
+    // replayBtn.anchor.setTo(0.5, 0);
     this.gameOverGroup.y = 30;
   };
   this.resetPipe = function(topPipeY, bottomPipeY) {
