@@ -59,7 +59,7 @@ app.post("/score", (req, res) => {
     method: "POST"
   };
 
-  const req = https.request(options, RES => {
+  const REQ = https.request(options, RES => {
     console.log(`statusCode: ${RES.statusCode}`);
 
     RES.on("data", d => {
@@ -67,12 +67,12 @@ app.post("/score", (req, res) => {
     });
   });
 
-  req.on("error", error => {
+  REQ.on("error", error => {
     console.error(error);
   });
 
-  req.write(data);
-  req.end();
+  REQ.write(data);
+  REQ.end();
 
   res.sendStatus(200);
 });
