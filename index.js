@@ -60,7 +60,7 @@ app.post("/score", (req, res) => {
   };
 
   const REQ = http.request(options, RES => {
-    console.log(`statusCode: ${RES.statusCode}`);
+    console.log(`res: ${RES}`);
 
     RES.on("data", d => {
       process.stdout.write(d);
