@@ -6,7 +6,7 @@ const expressLayouts = require("express-ejs-layouts");
 const http = require("http");
 const app = express();
 
-var score, Bscore, id, name, tid;
+var score, Bscore, uid, name, tid;
 app.engine("ejs", engine);
 app.use(expressLayouts);
 app.set("view engine", "ejs");
@@ -20,7 +20,7 @@ app.get("/:tid/:id/:name", (req, res) => {
     res.writeHead(200, { "Content-Type": "text/html" });
     res.write(data);
     res.end();
-    id = req.params.id;
+    uid = req.params.id;
     name = req.params.name;
     tid = req.params.tid;
   });
@@ -48,7 +48,7 @@ app.post("/score", (req, res) => {
   // .then(u => console.log(u));
   const data = JSON.stringify({
     score: score,
-    id: id,
+    id: uid,
     tid: tid
   });
 
