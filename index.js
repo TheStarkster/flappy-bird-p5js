@@ -38,7 +38,7 @@ app.get("/response", (req, res) => {
     tid: tid
   };
   axios.default
-    .post("http://localhost:5000/tournament/user/score-update", data)
+    .post("http://162.241.71.139:5000/tournament/user/score-update", data)
     .then(u => console.log(u));
   console.log("runned");
 });
