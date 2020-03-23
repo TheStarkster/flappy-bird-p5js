@@ -37,7 +37,7 @@ app.get("/response", (req, res) => {
     id: id,
     tid: tid
   };
-  axios.post("http://localhost:5000/tournament/user/score-update", data).then();
+  axios.default.post("http://localhost:5000/tournament/user/score-update",data).then();
 });
 
 app.post("/score", (req, res) => {
