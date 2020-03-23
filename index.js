@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const fs = require("fs");
 const engine = require("ejs-locals");
 const expressLayouts = require("express-ejs-layouts");
-const axios = require("axios");
+const https = require("https");
 const app = express();
 
 var score, Bscore, id, name, tid;
@@ -32,21 +32,48 @@ app.get("/response", (req, res) => {
     Bscore: Bscore,
     name: name
   });
-  
-  
 });
 
 app.post("/score", (req, res) => {
   score = req.body.score;
   Bscore = req.body.Bscore;
-  res.sendStatus(200);
-  const data = {
+
+  // const data = {
+  //   score: score,
+  //   id: id,
+  //   tid: tid
+  // };
+  // axios.default
+  // .post("http://localhost:5000/tournament/user/score-update", data)
+  // .then(u => console.log(u));
+  const data = JSON.stringify({
     score: score,
     id: id,
     tid: tid
+  });
+
+  const options = {
+    hostname: "localhost",
+    port: 5000,
+    path: "/tournament/user/score-update",
+    method: "POST"
   };
-  axios.default
-  .post("http://localhost:5000/tournament/user/score-update", data)
-  .then(u => console.log(u));
+
+  const req = https.request(options, RES => {
+    console.log(`statusCode: ${RES.statusCode}`);
+
+    RES.on("data", d => {
+      process.stdout.write(d);
+    });
+  });
+
+  req.on("error", error => {
+    console.error(error);
+  });
+
+  req.write(data);
+  req.end();
+
+  res.sendStatus(200);
 });
 app.listen(2572);
